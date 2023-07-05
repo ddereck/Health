@@ -51,7 +51,18 @@ INSTALLED_APPS = [
     # Local apps
     'Backend',
     'Front',
-    'Backend.api_auth'
+    'Backend.api_auth',
+    'Backend.api_facturation',
+    'Backend.api_generation-rapports',
+    'Backend.api_gestionècentres',
+    'Backend.api_gestion_dossiers_medicaux',
+    'Backend.api_gestion_hospitalisations',
+    'Backend.api_gestion_medecins',
+    'Backend.api_gestion_patients',
+    'Backend.api_messagerie',
+    'Backend.api_planification_rdv',
+    'Backend.api_recherche',
+    
     
 ]
 

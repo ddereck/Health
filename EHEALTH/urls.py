@@ -22,5 +22,14 @@ urlpatterns = [
     
     path('Backend/api_gestion_centres/', include('Backend.api_gestion_centres.urls')),
     path('Backend/api_auth/', include('Backend.api_auth.urls')),
+    path('Backend/api_facturation/', include('Backend.api_facturation.urls')),
+    path('Backend/api_generation_rapports/', include('Backend.api_generation_rapports.urls')),
+    path('Backend/api_gestion_dossiers_medicaux/', include('Backend.api_gestion_dossiers_medicaux.urls')),
+    path('Backend/api_gestion_hospitalisations/', include('Backend.api_gestion_hospitalisations.urls')),
+    path('Backend/api_gestion_medecins/', include('Backend.api_gestion_medecins.urls')),
+    path('Backend/api_gestion_patients/', include('Backend.api_gestion_patients.urls')),
+    path('Backend/api_messagerie/', include('Backend.api_messagerie.urls')),
+    path('Backend/api_planification_rdv/', include('Backend.api_planification_rdv.urls')),
+    path('Backend/api_recherche/', include('Backend.api_recherche.urls')),
     
 ]

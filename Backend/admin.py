@@ -1,9 +1,9 @@
 from django.contrib import admin
 from Backend.models import *
 from Backend.api_auth.models import CustomUser
-from Backend.api_gestion_centres.models import Centre
-from Backend.api_gestion_centres.models import Abonnement
-from Backend.api_gestion_centres.models import Message
+from Backend.api_gestion_centres.models import Centre, Abonnement, Message
+#from Backend.api_gestion_centres.models import Abonnement
+
 
 
 
