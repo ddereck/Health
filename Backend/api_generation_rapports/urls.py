@@ -8,3 +8,4 @@ urlpatterns = [
     # Inclure les URLs de l'API
     path('api/', include('api_generation_rapports.urls')),
 ]
+

@@ -1,4 +1,5 @@
-# Importer les vues de l'API
+from django.urls import path
+from django.views.generic.base import TemplateView
 from .api import (
     ReportGenerationView,
     DataAnalysisView,
@@ -28,3 +29,5 @@ urlpatterns = [
     # URL pour planifier la génération automatique de rapports
     path('reports/schedule/', ScheduledReportGenerationView.as_view(), name='schedule-report-generation'),
 ]
+class HomePageView(TemplateView):
+    template_name = 'Backend/home.html'

@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 from decouple import config
+from rest_framework.authentication import SessionAuthentication, TokenAuthentication
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -45,7 +47,7 @@ INSTALLED_APPS = [
 
     # Third-party apps
     'rest_framework',
-    
+    #'djangorestframework-simplejwt'
 
 
     # Local apps
@@ -53,8 +55,8 @@ INSTALLED_APPS = [
     'Front',
     'Backend.api_auth',
     'Backend.api_facturation',
-    'Backend.api_generation-rapports',
-    'Backend.api_gestionècentres',
+    'Backend.api_generation_rapports',
+    'Backend.api_gestion_centres',
     'Backend.api_gestion_dossiers_medicaux',
     'Backend.api_gestion_hospitalisations',
     'Backend.api_gestion_medecins',
@@ -62,7 +64,7 @@ INSTALLED_APPS = [
     'Backend.api_messagerie',
     'Backend.api_planification_rdv',
     'Backend.api_recherche',
-    
+
     
 ]
 
@@ -76,12 +78,22 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication',  # Authentification par session (pour les navigateurs)
+        'rest_framework.authentication.TokenAuthentication',  # Authentification par jeton d'accès
+        # Ajoutez d'autres classes d'authentification si nécessaire
+    ],
+    # Autres paramètres de configuration REST Framework...
+}
+
 ROOT_URLCONF = 'EHEALTH.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'Backend/templates/')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -153,3 +165,4 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
