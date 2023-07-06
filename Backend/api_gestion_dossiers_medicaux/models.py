@@ -1,5 +1,5 @@
 from django.db import models
-from api_gestion_patients.models import Patient
+from Backend.api_gestion_hospitalisations.models import Patient
 
 class MedicalRecord(models.Model):
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)

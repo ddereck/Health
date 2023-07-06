@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, reverse
 from .views import SearchView, PatientSearchView, DoctorSearchView, AppointmentSearchView, MedicalRecordSearchView
 
 urlpatterns = [
