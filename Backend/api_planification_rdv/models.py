@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils import timezone
-from doctors.models import Doctor
-from patients.models import Patient
+from Backend.api_gestion_medecins.models import Doctor, Availability
+from Backend.api_gestion_patients.models import Patient
 
 class Appointment(models.Model):
     doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE)

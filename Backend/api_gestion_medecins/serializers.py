@@ -2,10 +2,16 @@ from rest_framework import serializers
 from .models import Doctor, Specialty, Availability
 
 class DoctorSerializer(serializers.ModelSerializer):
-    # Serializer pour le modèle Doctor
+    class Meta:
+        model = Doctor
+        fields = '__all__'
 
 class SpecialtySerializer(serializers.ModelSerializer):
-    # Serializer pour le modèle Specialty
+    class Meta:
+        model = Specialty
+        fields = '__all__'
 
 class AvailabilitySerializer(serializers.ModelSerializer):
-    # Serializer pour le modèle Availability
+    class Meta:
+        model = Availability
+        fields = '__all__'
